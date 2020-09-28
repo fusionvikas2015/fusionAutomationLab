@@ -1,0 +1,21 @@
+29/09/2020 02:42:50  INFO BaseClass:75 -  Automation Framework Version:1.0
+29/09/2020 02:42:50  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
+29/09/2020 02:42:50  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
+29/09/2020 02:42:50  INFO BaseClass:81 - Platform: 7.0
+29/09/2020 02:42:50  INFO BaseClass:83 - DeviceName: SM-G925I
+29/09/2020 02:43:20  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+29/09/2020 02:43:20  INFO BaseClass:16 - TC01_LoginToAmazon
+29/09/2020 02:45:50  INFO BaseClass:75 -  Automation Framework Version:1.0
+29/09/2020 02:45:50  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
+29/09/2020 02:45:50  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
+29/09/2020 02:45:50  INFO BaseClass:81 - Platform: 7.0
+29/09/2020 02:45:50  INFO BaseClass:83 - DeviceName: SM-G925I
+29/09/2020 02:46:16  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+29/09/2020 02:46:17  INFO BaseClass:16 - TC01_LoginToAmazon
+29/09/2020 02:46:26  INFO BaseClass:75 -  Automation Framework Version:1.0
+29/09/2020 02:46:26  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
+29/09/2020 02:46:26  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
+29/09/2020 02:46:26  INFO BaseClass:81 - Platform: 7.0
+29/09/2020 02:46:26  INFO BaseClass:83 - DeviceName: SM-G925I
+29/09/2020 02:46:50  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+29/09/2020 02:46:50  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen

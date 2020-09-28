@@ -97,9 +97,11 @@ public class BaseClass extends ReportsLogger {
 		caps.setCapability("noReset", "true");
 		caps.setCapability("fullReset ", "false");
 
-		File appDir = new File(System.getProperty("user.dir") + "//src//main//java//resources//apk//");
-
-		File appPath = new File(appDir, Utility.parseGlobalProp("ANDROID_APP_NAME"));
+		//File appDir = new File(System.getProperty("user.dir") + "//src//main//java//resources//apk//");
+		//File appPath = new File(appDir, Utility.parseGlobalProp("ANDROID_APP_NAME"));
+		
+		File appPath = new File(System.getProperty("user.dir") + Utility.parseGlobalProp("APP_PATH"));
+		
 
 		caps.setCapability("app", appPath.getAbsolutePath());
 
