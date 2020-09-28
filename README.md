@@ -44,5 +44,5 @@
  
  
  
-###### *For any support or query, please contact Vikas Kumar [fusionvikas.py@gmail.com] * ######
+###### For any support or query, please contact Vikas Kumar [fusionvikas.py@gmail.com]  ######
 
