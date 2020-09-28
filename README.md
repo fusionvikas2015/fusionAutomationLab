@@ -41,6 +41,13 @@
    **Maven Command - enter the device serialid and appium port dynamically during run time**
   - `mvn clean test -DANDROID_SERIALID=<serialId> -DPORT=<port>`
  
+### Silent Features of this framework:
+- Generate Extent report inside report directory at root level.
+- Attach screenshots for Failed test cases.
+- Added loggers - configurable using log4j.properties file.
+- Capture logcat for for the Failed testcases.
+- Can be runned from both Windows PC as well as on MAC.
+  
  
  
  
