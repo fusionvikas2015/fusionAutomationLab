@@ -1,5 +1,6 @@
-package tests;
+package com.fusionlab.apptest;
 
+import org.testng.annotations.Test;
 import org.testng.annotations.Test;
 
 import com.fusionlab.android.Mobile;
@@ -8,11 +9,9 @@ import com.fusionlab.pageobject.HomePage;
 import com.fusionlab.pageobject.LoginPage;
 import com.fusionlab.pageobject.ProductSearchScreen;
 
-public class ApplicationLoginTest extends BaseClass {
+public class ApplicationTest extends BaseClass {
 
-	
-
-	//@Test
+	@Test
 	public void TC01_LoginToAmazon() throws Exception {
 		logger.info("TC01_LoginToAmazon");
 		LoginPage.doLoginAsValidUser("fusionvikas", "foster123");
@@ -24,7 +23,7 @@ public class ApplicationLoginTest extends BaseClass {
 		logger.info("TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen");
 		LoginPage.doLoginAsGuest();
 		HomePage.searchProductOnHomeScreen("65-inch TV");
-		
+
 		ProductSearchScreen.doSearchForProduct("LG 164 cm (65 inches) 4K Ultra HD");
 		ProductSearchScreen.AddItemToCart();
 	}

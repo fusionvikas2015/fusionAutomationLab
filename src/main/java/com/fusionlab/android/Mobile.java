@@ -56,6 +56,7 @@ public class Mobile extends BaseClass {
 		Thread.sleep(2000);
 		driver.findElementById("continue");
 	}
+	
 
 	public static void changeDriverContextToWeb() throws Exception {
 		Set<String> allContext = driver.getContextHandles();
@@ -78,8 +79,7 @@ public class Mobile extends BaseClass {
 		driver.findElementById("continue");
 
 	}
-	
-	
+
 	/**
 	 * This method can be used to scroll to the text
 	 * 
@@ -94,15 +94,16 @@ public class Mobile extends BaseClass {
 	}
 
 	public static void scrollToTextMatch(String text) {
-		//driver.findElement(MobileBy.AndroidUIAutomator(
-		//		"new UiScrollable(new UiSelector().resourceId(\"com.amazon.mShop.android.shopping:id/rs_vertical_stack_view\")).scrollIntoView(new UiSelector().textMatches(\"" + text + "\")).instance(0))"));
-	
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\"" + text + "\").instance(0))"));     
-		
+		// driver.findElement(MobileBy.AndroidUIAutomator(
+		// "new UiScrollable(new
+		// UiSelector().resourceId(\"com.amazon.mShop.android.shopping:id/rs_vertical_stack_view\")).scrollIntoView(new
+		// UiSelector().textMatches(\"" + text + "\")).instance(0))"));
+
+		driver.findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\""
+						+ text + "\").instance(0))"));
 
 	}
-	
-	
 
 	public static void pressEnterKey() throws Exception {
 		Utility.exec_adb_command(androidDeviceID, "shell input keyevent KEYCODE_ENTER");
@@ -127,23 +128,6 @@ public class Mobile extends BaseClass {
 	}
 
 	/**
-	 * This method can be used to navigate back to home screen by pressing hard key
-	 * back button.
-	 * 
-	 * @throws Exception
-	 */
-	public static void navigateBackToHomeInAndroid() throws Exception {
-		int i = 0;
-		while (i <= 5) {
-			pressBackButton();
-			i += 1;
-			if (i >= 5) {
-				break;
-			}
-		}
-	}
-
-	/**
 	 * This method can be used to drag the one web element to the another web
 	 * element.
 	 * 
@@ -157,8 +141,6 @@ public class Mobile extends BaseClass {
 		t.longPress(longPressOptions().withElement(element(source))).moveTo(element(destination)).release().perform();
 		Thread.sleep(1000);
 	}
-
-
 
 	/**
 	 * This method can be used to swipe using co-ordinates.
@@ -229,31 +211,6 @@ public class Mobile extends BaseClass {
 		int Width = driver.manage().window().getSize().getWidth();
 		System.out.println("Screen Width: " + Width);
 		return Width;
-	}
-
-	/**
-	 * This method can be used to get the co-ordinate of bezier grapgh.
-	 * 
-	 * @return
-	 */
-	public static Point getBezierGrapCoordinates() {
-		MobileElement element = (MobileElement) driver
-				.findElement(By.id("com.astrogaming.scorpius:id/bezierGraphView"));
-		Point location = element.getLocation();
-		System.out.println("Co-ordinate: " + location);
-		return location;
-	}
-
-	/**
-	 * This method can be used to get the point of beizer band.
-	 * 
-	 * @return
-	 */
-	public static Point getBandViewCoordinates() {
-		MobileElement element = (MobileElement) driver.findElement(By.id("com.astrogaming.scorpius:id/bandView"));
-		Point location = element.getLocation();
-		System.out.println("Co-ordinate: " + location);
-		return location;
 	}
 
 }

@@ -15,32 +15,12 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class LoginPage extends BaseClass {
 
-//	@AndroidFindBy(id = "com.github.fgoncalves.qa:id/email")
-//	private static WebElement Email;
-//
-//	@AndroidFindBy(id = "com.github.fgoncalves.qa:id/password")
-//	private static WebElement Password;
-//
-//	@AndroidFindBy(xpath = "//*[@text='SIGN IN OR REGISTER']")
-//	private static WebElement Loginbuttom;
-//	
-//
-//	public static void doLoginAsValidUser(String username,String password) throws Exception {
-//		Thread.sleep(2000);
-//		type(Email, username,"Email textbox");
-//		type(Password, password,"Password textbox");
-//		click(Loginbuttom,"Login Button");
-//		System.out.println("Login Successful");
-//	}
-
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/sign_in_button")
 	private static WebElement SignIn;
 
-	
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/skip_sign_in_button")
 	private static WebElement SkipSignIn;
-	
-	
+
 	public static void doLoginAsValidUser(String username, String password) throws Exception {
 		Thread.sleep(2000);
 		click(SignIn, "Login Button");
@@ -56,6 +36,4 @@ public class LoginPage extends BaseClass {
 		Thread.sleep(2000);
 	}
 
-	
-	
 }
