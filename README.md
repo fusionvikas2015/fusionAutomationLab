@@ -8,9 +8,9 @@
 - Clone the project to the local.
 - Update the below parameters as per the device under test in global.properties file present in the project root directory.
   
-    **For Android**
     - `ANDROID_SERIALID = <Serial Id>`
-    - `ANDROID_APP_NAME = <App Name>`
+    - `APP_PATH = <App Name>`
+    - `MAC_ANDROID_HOME= </Users/Sunmoon/Library/Android/sdk/platform-tools>`
   
 #### 2. Start Appium Server
 - To start the appium server, launch the Appium-Desktop by double clicking on it and set the below parameters:
