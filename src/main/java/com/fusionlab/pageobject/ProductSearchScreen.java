@@ -17,13 +17,16 @@ public class ProductSearchScreen extends BaseClass {
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/item_title")
 	private static List<WebElement> ProductListName;
 
-	@AndroidFindBy(tagName = "com.amazon.mShop.android.shopping:id/item_title")
-	private static WebElement AddToCart;
+	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/add-to-cart-button")
+	private static WebElement AddToCartBtn;
+
+	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/a-autoid-0-announce")
+	private static WebElement CartPopUpBtn;
 
 	public static String doSearchForProduct(String searchForProduct) throws Exception {
 		String fullProductName = searchForProduct;
 		System.out.println("searchForProduct:" + searchForProduct);
-		// Mobile.scrollToTextMatch(searchForProduct);
+		Mobile.scrollToTextMatch(searchForProduct);
 		int count = ProductListName.size();
 		System.out.println("Count:" + count);
 
@@ -44,7 +47,8 @@ public class ProductSearchScreen extends BaseClass {
 
 	public static void AddItemToCart() throws Exception {
 		Mobile.scrollToText("Add to Cart");
-		click(AddToCart, "Add to cart");
+		click(AddToCartBtn, "Add to cart");
+		click(CartPopUpBtn, "Cart btn on Widget");
 	}
 
 }

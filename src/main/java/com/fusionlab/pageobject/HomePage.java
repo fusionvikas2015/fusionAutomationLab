@@ -11,10 +11,12 @@ public class HomePage extends BaseClass {
 
 	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/rs_search_src_text")
 	private static WebElement SearchBar;
+	
+	
 
 	public static void searchProductOnHomeScreen(String productName) throws Exception {
 		click(SearchBar, "Search bar");
-		type(SearchBar, productName, "Search for 65-inch TV");
+		type(SearchBar, productName, "65-inch TV");
 		Mobile.pressEnterKey();
 
 	}

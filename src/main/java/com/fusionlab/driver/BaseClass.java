@@ -11,7 +11,9 @@
 package com.fusionlab.driver;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.ServerSocket;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -28,8 +30,12 @@ import com.fusionlab.utilities.Utility;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+
 
 public class BaseClass extends ReportsLogger {
+	
+	public static AppiumDriverLocalService service;
 
 	public  static Logger logger = LogManager.getLogger(BaseClass.class);
 
@@ -68,6 +74,33 @@ public class BaseClass extends ReportsLogger {
 //		}
 //	}
 
+	
+	public AppiumDriverLocalService startServer() {
+		boolean flag = checkIfServerIsRunnning(4723);
+		if (!flag) {
+			service = AppiumDriverLocalService.buildDefaultService();
+			service.start();
+		}
+		return service;
+
+	}
+
+	public static boolean checkIfServerIsRunnning(int port) {
+
+		boolean isServerRunning = false;
+		ServerSocket serverSocket;
+		try {
+			serverSocket = new ServerSocket(port);
+			serverSocket.close();
+		} catch (IOException e) {
+			isServerRunning = true;
+			logger.debug("Server is already Running and Port is in Use");
+		} finally {
+			serverSocket = null;
+		}
+		return isServerRunning;
+	}
+	
 	@BeforeMethod
 	public static AndroidDriver<MobileElement> createEnvironment() throws Exception {
 
@@ -128,8 +161,9 @@ public class BaseClass extends ReportsLogger {
 	}
 
 	public static void type(WebElement element, String value, String elementName) {
+		System.out.println("SendKey:"+value);
 		element.sendKeys(value);
-		logger.info("Typing in : " + elementName + " entered the value as : " + value);
+		logger.info("Typing  : " + value);
 	}
 
 }
