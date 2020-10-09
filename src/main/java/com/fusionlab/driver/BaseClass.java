@@ -200,12 +200,11 @@ public class BaseClass extends ReportsLogger {
 		String mainLogcat = rootLogDir + myJobID + "_Logcat.txt";
 		Utility.createDir(rootLogDir);
 		Utility.startLogcat(mainLogcat);
-		
-		
-//		Thread.sleep(1000);
-//		if (driver != null) {
-//			driver.quit();
-//		}
+				
+		Thread.sleep(1000);
+		if (driver != null) {
+			driver.quit();
+		}
 	}
 
 	/**
