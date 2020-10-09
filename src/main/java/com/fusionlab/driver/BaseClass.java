@@ -114,7 +114,7 @@ public class BaseClass extends ReportsLogger {
 	public void startAppiumServer() throws Exception {
 		logger.debug("Starting the appium server at suite level");
 		System.out.println("\n\tStarting the appium server at suite level");
-		//startServer();
+		startServer();
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class BaseClass extends ReportsLogger {
 	public void stopAppiumServer() throws Exception {
 		logger.debug("\nStopping the appium server at suite level");
 		System.out.println("\n\t Stopping the appium server at suite level");
-		//service.stop();
+		service.stop();
 	}
 
 	/**
