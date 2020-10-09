@@ -42,11 +42,14 @@
   - `mvn clean test -DANDROID_SERIALID=<serialId> -DPORT=<port>`
  
 ### Silent Features of this framework:
+- Data Provder - Input from external file ie. Excel sheet(eg : username, pswd, 65-inch TV, LG 164 cm (65 inches) 4K Ultra HD)
 - Generate Extent report inside report directory at root level.
+- Add Assertions with Screenshots
 - Attach screenshots for Failed test cases.
 - Added loggers - configurable using log4j.properties file.
 - Capture logcat for for the Failed testcases.
 - Can be runned from both Windows PC as well as on MAC.
+- Add JavaDoc to all the methods.
   
  
  
