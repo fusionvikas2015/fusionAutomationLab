@@ -35,7 +35,7 @@ import io.appium.java_client.MobileElement;
 
 /**
  * 
- * @author Vikas Kumar This class is used to generate the extent HTML report
+ * @author Vikas Kumar. This class is used to generate the extent HTML report
  *
  */
 public class ReportsLogger extends Thread {
@@ -66,12 +66,8 @@ public class ReportsLogger extends Thread {
 	public synchronized void beforeMethod(Method method) throws Exception {
 		String method_name = method.getName();
 		ExtentTest child = ((ExtentTest) parentTest.get()).createNode(method_name);
-		// ExtentTest child = ((ExtentTest)
-		// parentTest.get()).createNode(method.getName());
 		test.set(child);
-
-		System.out.println(">>>>>Automation Started : " + method_name + " <<<<<");
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+		System.out.println("\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println(">>>>> Automation Started : " + method_name + " <<<<<");
 		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 		System.out.println("Testcase Setup...");
@@ -79,23 +75,18 @@ public class ReportsLogger extends Thread {
 		Utility.clearLogcat();
 	}
 
+	/**
+	 * Add screenshot to the Failed TCs. Collect Logcat for the Failed TCs.
+	 * 
+	 * @param result
+	 * @param method
+	 * @throws Exception
+	 */
 	@AfterMethod
 	public synchronized void afterMethod(ITestResult result, Method method) throws Exception {
-		System.out.println("\nTestcase teardown...");
 		AppiumDriver<MobileElement> driver = BaseClass.driver;
 
-		/*
-		 * Android Logcat Capture - Suite level
-		 */
-		String rootLogDir = "logs" + "//" + myJobID + "//";
-		String mainLogcat = rootLogDir + myJobID + "_Logcat.txt";
-		// System.out.println("mainLogcat: " + mainLogcat);
-		Utility.createDir(rootLogDir);
-		Utility.startLogcat(mainLogcat);
-
-		/*
-		 * Screenshot attachment to the failed TCs.
-		 */
+		// Add Screenshot attachment to the failed TCs.
 		if (result.getStatus() == ITestResult.FAILURE) {
 			System.out.println("Test Case got failed as :\n" + result.getThrowable());
 			System.out.println("==> TC FAILED : " + method.getName() + "\n");
@@ -107,9 +98,7 @@ public class ReportsLogger extends Thread {
 			((ExtentTest) test.get()).fail("Click on image for full view",
 					MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
-			/*
-			 * Android Logcat Capture - for failed test cases only.
-			 */
+			// Android Logcat Capture - for failed test cases only.
 			String TC_NAME = method.getName();
 			String rootLogDir2 = "logs" + "//" + myJobID + "//";
 			String methodLevelLogcatDir = rootLogDir2 + TC_NAME;
@@ -129,15 +118,23 @@ public class ReportsLogger extends Thread {
 		extent.flush();
 		Thread.sleep(2000);
 
+		// Kil the driver
 		if (driver != null) {
 			driver.quit();
 		}
 
 	}
 
+	/**
+	 * Capture the screenshots for attaching the extent report.
+	 * 
+	 * @param driver
+	 * @param screenshotName
+	 * @return
+	 * @throws IOException
+	 */
 	private String getScreenshot(AppiumDriver<MobileElement> driver, String screenshotName) throws IOException {
 		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-		// AppiumDriver<MobileElement> driver = BaseClass.driver;
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File source = ts.getScreenshotAs(OutputType.FILE);
 		String destination = System.getProperty("user.dir") + "/FailedTestsScreenshots/" + screenshotName + dateName
@@ -156,6 +153,12 @@ public class ReportsLogger extends Thread {
 			return extent;
 		}
 
+		/**
+		 * Extent Report Configuration
+		 * 
+		 * @param fileName
+		 * @return
+		 */
 		public static ExtentReports createInstance(String fileName) {
 			ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
 			htmlReporter.config().setTheme(Theme.STANDARD);

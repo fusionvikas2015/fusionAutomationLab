@@ -1,81 +1,33 @@
-29/09/2020 02:42:50  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 02:42:50  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 02:42:50  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 02:42:50  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 02:42:50  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 02:43:20  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 02:43:20  INFO BaseClass:16 - TC01_LoginToAmazon
-29/09/2020 02:45:50  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 02:45:50  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 02:45:50  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 02:45:50  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 02:45:50  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 02:46:16  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 02:46:17  INFO BaseClass:16 - TC01_LoginToAmazon
-29/09/2020 02:46:26  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 02:46:26  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 02:46:26  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 02:46:26  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 02:46:26  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 02:46:50  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 02:46:50  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:18:38  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:18:38  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:18:38  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:18:38  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:18:38  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:18:59  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:19:00  INFO BaseClass:16 - TC01_LoginToAmazon
-29/09/2020 03:19:29  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:19:29  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:19:29  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:19:29  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:19:29  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:19:53  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:19:53  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:19:54  INFO BaseClass:127 - Search bar Clicked
-29/09/2020 03:20:43  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:20:43  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:20:43  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:20:43  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:20:44  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:21:03  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:21:04  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:21:08  INFO BaseClass:127 - Search bar Clicked
-29/09/2020 03:29:04  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:29:04  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:29:04  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:29:05  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:29:05  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:29:23  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:29:23  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:29:28  INFO BaseClass:127 - Search bar Clicked
-29/09/2020 03:33:45  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:33:45  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:33:45  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:33:45  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:33:45  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:34:37  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:34:38  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:34:40  INFO BaseClass:127 - SkipSignIn Button Clicked
-29/09/2020 03:34:40  INFO BaseClass:35 - Login As Guest - Skipped Sign In
-29/09/2020 03:34:42  INFO BaseClass:127 - Search bar Clicked
-29/09/2020 03:34:45  INFO BaseClass:133 - Typing  : 65-inch TV
-29/09/2020 03:45:30  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:45:30  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:45:30  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:45:30  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:45:30  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:45:56  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:45:56  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:46:54  INFO BaseClass:75 -  Automation Framework Version:1.0
-29/09/2020 03:46:54  INFO BaseClass:78 - Please Wait ! Initiating Android Appium Driver...
-29/09/2020 03:46:54  INFO BaseClass:79 - androidDeviceID: 1215fc2249190b03
-29/09/2020 03:46:54  INFO BaseClass:81 - Platform: 7.0
-29/09/2020 03:46:55  INFO BaseClass:83 - DeviceName: SM-G925I
-29/09/2020 03:47:49  INFO BaseClass:119 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
-29/09/2020 03:47:51  INFO BaseClass:23 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
-29/09/2020 03:47:53  INFO BaseClass:127 - SkipSignIn Button Clicked
-29/09/2020 03:47:53  INFO BaseClass:35 - Login As Guest - Skipped Sign In
-29/09/2020 03:47:55  INFO BaseClass:127 - Search bar Clicked
-29/09/2020 03:47:58  INFO BaseClass:133 - Typing  : 65-inch TV
+09/10/2020 15:17:22  INFO BaseClass:143 -  Automation Framework Version:1.0
+09/10/2020 15:17:22  INFO BaseClass:146 - Please Wait ! Initiating Android Appium Driver...
+09/10/2020 15:17:22  INFO BaseClass:147 - androidDeviceID: 712KPPB1016952
+09/10/2020 15:17:22  INFO BaseClass:149 - Platform: 11
+09/10/2020 15:17:22  INFO BaseClass:151 - DeviceName: Pixel 2 XL
+09/10/2020 15:17:55  INFO BaseClass:183 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+09/10/2020 15:17:56  INFO BaseClass:21 - TC01_LoginToAmazon
+09/10/2020 15:17:56  INFO BaseClass:196 - 
+
+				============>>>>  Testcase Teardown  <<<<============
+09/10/2020 15:18:03  INFO BaseClass:143 -  Automation Framework Version:1.0
+09/10/2020 15:18:03  INFO BaseClass:146 - Please Wait ! Initiating Android Appium Driver...
+09/10/2020 15:18:03  INFO BaseClass:147 - androidDeviceID: 712KPPB1016952
+09/10/2020 15:18:04  INFO BaseClass:149 - Platform: 11
+09/10/2020 15:18:04  INFO BaseClass:151 - DeviceName: Pixel 2 XL
+09/10/2020 15:18:53  INFO BaseClass:183 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+09/10/2020 15:18:53  INFO BaseClass:60 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
+09/10/2020 15:18:57  INFO BaseClass:219 - Search bar Clicked
+09/10/2020 15:19:00  INFO BaseClass:245 - Typing  : 65-inch TV
+09/10/2020 15:19:09  INFO BaseClass:66 - Get the Product name , price and description before checkout
+09/10/2020 15:19:25  INFO BaseClass:196 - 
+
+				============>>>>  Testcase Teardown  <<<<============
+09/10/2020 15:19:33  INFO BaseClass:143 -  Automation Framework Version:1.0
+09/10/2020 15:19:33  INFO BaseClass:146 - Please Wait ! Initiating Android Appium Driver...
+09/10/2020 15:19:33  INFO BaseClass:147 - androidDeviceID: 712KPPB1016952
+09/10/2020 15:19:33  INFO BaseClass:149 - Platform: 11
+09/10/2020 15:19:33  INFO BaseClass:151 - DeviceName: Pixel 2 XL
+09/10/2020 15:19:49  INFO BaseClass:183 - iOS Driver Initiated Successfully.Now initiating all the screens objects.
+09/10/2020 15:19:49  INFO BaseClass:30 - TC02_VerifyDetailsOnProductSearchScreenVsCheckoutScreen
+09/10/2020 15:19:52  INFO BaseClass:196 - 
+
+				============>>>>  Testcase Teardown  <<<<============

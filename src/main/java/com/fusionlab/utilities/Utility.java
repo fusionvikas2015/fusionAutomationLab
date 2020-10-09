@@ -17,8 +17,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.fusionlab.common.Constants;
 import com.fusionlab.driver.BaseClass;
-import com.fusionlab.pageobject.HomePage;
-import com.fusionlab.pageobject.LoginPage;
+import com.fusionlab.pageobject.CheckoutScreen;
+import com.fusionlab.pageobject.HomeScreen;
+import com.fusionlab.pageobject.LoginScreen;
 import com.fusionlab.pageobject.ProductSearchScreen;
 
 import io.appium.java_client.AppiumDriver;
@@ -42,11 +43,10 @@ public class Utility extends BaseClass {
 
 	public static void InitialisePages(AppiumDriver<MobileElement> driver) {
 		try {
-			PageFactory.initElements(new AppiumFieldDecorator(driver), new LoginPage());
-			PageFactory.initElements(new AppiumFieldDecorator(driver), new HomePage());
+			PageFactory.initElements(new AppiumFieldDecorator(driver), new LoginScreen());
+			PageFactory.initElements(new AppiumFieldDecorator(driver), new HomeScreen());
 			PageFactory.initElements(new AppiumFieldDecorator(driver), new ProductSearchScreen());
-			
-
+			PageFactory.initElements(new AppiumFieldDecorator(driver), new CheckoutScreen());
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

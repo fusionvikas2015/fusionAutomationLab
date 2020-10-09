@@ -21,23 +21,29 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
 import com.fusionlab.common.Constants;
 import com.fusionlab.utilities.ReportsLogger;
 import com.fusionlab.utilities.Utility;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
-
 public class BaseClass extends ReportsLogger {
-	
+
 	public static AppiumDriverLocalService service;
 
-	public  static Logger logger = LogManager.getLogger(BaseClass.class);
+	/**
+	 * Logger instance
+	 */
+	public static Logger logger = LogManager.getLogger(BaseClass.class);
 
 	/**
 	 * driver instance
@@ -62,19 +68,11 @@ public class BaseClass extends ReportsLogger {
 	 */
 	public static String locale = Utility.parseGlobalProp("LOCALE");
 
-//	@AfterSuite
-//	public void teardown() throws Exception {
-//		/**
-//		 * Suite teardown. Kill the appium driver
-//		 */
-//		System.out.println("\n\n\t\t\t\t============>>>> " + "Suite Level Teardown" + " <<<<============");
-//		Thread.sleep(1000);
-//		if (driver != null) {
-//			driver.quit();
-//		}
-//	}
-
-	
+	/**
+	 * This metod is used to start the appium server on free appium port ie. 4723
+	 * 
+	 * @return service
+	 */
 	public AppiumDriverLocalService startServer() {
 		boolean flag = checkIfServerIsRunnning(4723);
 		if (!flag) {
@@ -85,8 +83,13 @@ public class BaseClass extends ReportsLogger {
 
 	}
 
+	/**
+	 * This method is used to check whether the appiym port 4723 is free or not.
+	 * 
+	 * @param port
+	 * @return port
+	 */
 	public static boolean checkIfServerIsRunnning(int port) {
-
 		boolean isServerRunning = false;
 		ServerSocket serverSocket;
 		try {
@@ -100,7 +103,39 @@ public class BaseClass extends ReportsLogger {
 		}
 		return isServerRunning;
 	}
-	
+
+	/**
+	 * START the appium server at the suite level. It can be changed to class or
+	 * method level too depending on the requirements.
+	 * 
+	 * @throws Exception
+	 */
+	@BeforeSuite
+	public void startAppiumServer() throws Exception {
+		logger.debug("Starting the appium server at suite level");
+		System.out.println("\n\tStarting the appium server at suite level");
+		//startServer();
+	}
+
+	/**
+	 * STOP the appium server at the suite level. It can be changed to class or
+	 * method level too depending on the requirements.
+	 * 
+	 * @throws Exception
+	 */
+	@AfterSuite
+	public void stopAppiumServer() throws Exception {
+		logger.debug("\nStopping the appium server at suite level");
+		System.out.println("\n\t Stopping the appium server at suite level");
+		//service.stop();
+	}
+
+	/**
+	 * Creating the instance of driver with the help of desired capabilities.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
 	@BeforeMethod
 	public static AndroidDriver<MobileElement> createEnvironment() throws Exception {
 
@@ -130,11 +165,7 @@ public class BaseClass extends ReportsLogger {
 		caps.setCapability("noReset", "true");
 		caps.setCapability("fullReset ", "false");
 
-		//File appDir = new File(System.getProperty("user.dir") + "//src//main//java//resources//apk//");
-		//File appPath = new File(appDir, Utility.parseGlobalProp("ANDROID_APP_NAME"));
-		
 		File appPath = new File(System.getProperty("user.dir") + Utility.parseGlobalProp("APP_PATH"));
-		
 
 		caps.setCapability("app", appPath.getAbsolutePath());
 
@@ -155,13 +186,61 @@ public class BaseClass extends ReportsLogger {
 		return driver;
 	}
 
+	/**
+	 * Kill/destroy the driver instance on test case execution completion.
+	 * 
+	 * @throws Exception
+	 */
+	@AfterMethod
+	public void teardown() throws Exception {
+		logger.info("\n\n\t\t\t\t============>>>> " + " Testcase Teardown " + " <<<<============");
+		
+		//Android Logcat Capture - Suite level
+		String rootLogDir = "logs" + "//" + myJobID + "//";
+		String mainLogcat = rootLogDir + myJobID + "_Logcat.txt";
+		Utility.createDir(rootLogDir);
+		Utility.startLogcat(mainLogcat);
+		
+		
+//		Thread.sleep(1000);
+//		if (driver != null) {
+//			driver.quit();
+//		}
+	}
+
+	/**
+	 * Click event - using the webElement
+	 * 
+	 * @param element
+	 * @param elementName
+	 */
 	public static void click(WebElement element, String elementName) {
 		element.click();
 		logger.info(elementName + " Clicked");
 	}
 
+	/**
+	 * Get text using the webElement.
+	 * 
+	 * @param element
+	 * @param elementName
+	 * @return
+	 */
+	public static String getText(WebElement element, String elementName) {
+		String txt = element.getText();
+		logger.info(elementName + " gettext");
+		return txt;
+	}
+
+	/**
+	 * Send key event - using the WebElement.
+	 * 
+	 * @param element
+	 * @param value
+	 * @param elementName
+	 */
 	public static void type(WebElement element, String value, String elementName) {
-		System.out.println("SendKey:"+value);
+		System.out.println("SendKey :" + value);
 		element.sendKeys(value);
 		logger.info("Typing  : " + value);
 	}
